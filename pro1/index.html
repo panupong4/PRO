@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ดูหนัง จิราต้องรอด</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #videoContainer {
+            width: 90%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border: 2px solid #fff;
+            border-radius: 8px;
+        }
+        .episode-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .episode-list button {
+            padding: 10px 20px;
+            background-color: #222;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .episode-list button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ดูหนังให้สนุกๆนะคะที่รัก</h1>
+
+    <div id="videoContainer">
+        <video id="player" controls>
+            <source src="episode1.mp4" type="video/mp4">
+            เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+        </video>
+    </div>
+
+    <div class="episode-list">
+        <button onclick="playEpisode('vdo/เขมจิราต้องรอดEP1.mp4')">ตอนที่ 1</button>
+        <button onclick="playEpisode('vdo/episode2.mp4')">ตอนที่ 2</button>
+        <button onclick="playEpisode('vdo/episode3.mp4')">ตอนที่ 3</button>
+        <button onclick="playEpisode('vdo/episode4.mp4')">ตอนที่ 4</button>
+    </div>
+
+    <script>
+        function playEpisode(fileName) {
+            const player = document.getElementById('player');
+            player.src = fileName;
+            player.load();
+            player.play();
+        }
+    </script>
+
+</body>
+</html>
